@@ -99,7 +99,7 @@ cc.Class({
                 } else {
                     self.showLog('unknow video: ' + data.name);
                 }
-                self.showLog('onAdColonyStarted');
+                self.showLog('onAdColonyChange');
             },
             onAdColonyReward : function (data, currencyName, amount, success) {
                 // Called when AdColony v4vc ad finish playing
@@ -109,8 +109,10 @@ cc.Class({
                 console.log("amount: " + amount.toString());
                 console.log("success: " + success.toString());
 
-                self.labelCoin.string += amount;
-                self.showLog('onAdColonyStarted');
+                let coin = parseInt(self.labelCoin.string);
+                coin += amount;
+                self.labelCoin.string = '' + coin;
+                self.showLog('onAdColonyReward');
             },
             onAdColonyStarted : function (data) {
                 // Called when ad starts playing
@@ -139,17 +141,28 @@ cc.Class({
 
     },
 
-    onShow() {
-        this.showLog('3333');
+    onShowVideo() {
         if (!cc.sys.isMobile) {
-            console.log('onShow just valid on mobile');
+            console.log('onShowVideo just valid on mobile');
             return
         }
-        const adName = 'video';
-        if (cocos.plugin.AdColony.getAdStatus(adName)) {
+        this.showAD('video');
+    },
+
+    onShowV4VC() {
+        if (!cc.sys.isMobile) {
+            console.log('onShowV4VC just valid on mobile');
+            return
+        }
+        this.showAD('v4vc');
+    },
+
+    showAD(adName) {
+        const adStatus = cocos.plugin.AdColony.getAdStatus(adName);
+        if (3 == adStatus) {
             cocos.plugin.AdColony.show(adName);
         } else {
-            this.showLog(`AD ${adName} is not available`);
+            this.showLog(`AD ${adName} status: ${adStatus}, can't show for now`);
         }
     },
 
