@@ -1,0 +1,41 @@
+
+{
+    "ios" :
+    {
+        "AdColony":{
+            "id":"appbdee68ae27024084bb334a",
+            "debug":true,
+            "ads":{
+                "video":{
+                    "zone": "vzf8fb4670a60e4a139d01b5",
+                    "v4vc": false
+                },
+                "v4vc":{
+                    "zone": "vzf8e4e97704c4445c87504e",
+                    "v4vc": true,
+                    "pre_popup" : true,
+                    "post_popup": true
+                }
+            }
+        }
+    },
+    "android" :
+    {
+        "AdColony":{
+            "id":"app185a7e71e1714831a49ec7",
+            "debug":true,
+            "ads":{
+                "video":{
+                    "zone": "vz06e8c32a037749699e7050",
+                    "v4vc": false
+                },
+                "v4vc":{
+                    "zone": "vz1fd5a8b2bf6841a0a4b826",
+                    "v4vc": true,
+                    "pre_popup" : true,
+                    "post_popup": true
+                }
+            }
+        }
+    }
+}
