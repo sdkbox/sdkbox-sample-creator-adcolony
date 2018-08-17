@@ -20,7 +20,6 @@
   },
   "packageName": "org.cocos2d.sample.adcolony",
   "privateKey": "",
-  "renderMode": "0",
   "startScene": "344be45b-c5c0-4378-8ab5-3f2deedeef9d",
   "title": "sample",
   "webOrientation": "auto",
@@ -32,5 +31,11 @@
     "subContext": ""
   },
   "xxteaKey": "e2063446-972e-4a",
-  "zipCompressJs": true
+  "zipCompressJs": true,
+  "qqplay": {
+    "orientation": "portrait",
+    "REMOTE_SERVER_ROOT": ""
+  },
+  "fb-instant-games": {},
+  "renderMode": "0"
 }

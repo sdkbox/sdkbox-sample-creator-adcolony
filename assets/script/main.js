@@ -144,7 +144,7 @@ cc.Class({
     onShowVideo() {
         if (!cc.sys.isMobile) {
             console.log('onShowVideo just valid on mobile');
-            return
+            return;
         }
         this.showAD('video');
     },
@@ -152,7 +152,7 @@ cc.Class({
     onShowV4VC() {
         if (!cc.sys.isMobile) {
             console.log('onShowV4VC just valid on mobile');
-            return
+            return;
         }
         this.showAD('v4vc');
     },
@@ -166,7 +166,28 @@ cc.Class({
         }
     },
 
+    onRequestVideo() {
+        if (!cc.sys.isMobile) {
+            console.log('onRequestVideo just valid on mobile');
+            return;
+        }
+        this.requestAD('video');
+    },
+
+    onRequestV4VC() {
+        if (!cc.sys.isMobile) {
+            console.log('onRequestV4VC just valid on mobile');
+            return;
+        }
+        this.requestAD('v4vc');
+    },
+
+    requestAD(adName) {
+        cocos.plugin.AdColony.requestIntersitalAd(adName);
+    },
+
     showLog(log) {
+        console.log(log);
         this.logs.push(log);
         while(this.logs.length > 5) {
             this.logs.pop();
