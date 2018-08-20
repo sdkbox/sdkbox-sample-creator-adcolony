@@ -253,3 +253,10 @@ if (0 == status) {
 	console.log("unknow error");
 }
 ```
+
+请求广告, 参数为:
+
+* adName string 广告名字
+```javascript
+cocos.plugin.AdColony.requestIntersitalAd(adName)
+```
